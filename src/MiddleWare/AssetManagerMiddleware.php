@@ -3,10 +3,13 @@
 namespace AssetManager\Expressive\MiddleWare;
 
 use AssetManager\Core\Service\AssetManager;
+use Interop\Http\ServerMiddleware\DelegateInterface;
+use Interop\Http\ServerMiddleware\MiddlewareInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Zend\Diactoros\Response;
 
-class AssetManagerMiddleware
+class AssetManagerMiddleware implements MiddlewareInterface
 {
     protected $assetManager;
 
@@ -15,20 +18,12 @@ class AssetManagerMiddleware
         $this->assetManager = $assetManager;
     }
 
-    public function __invoke(
-        ServerRequestInterface $request,
-        ResponseInterface $response,
-        callable $next = null
-    ) {
-
+    public function process(ServerRequestInterface $request, DelegateInterface $delegate)
+    {
         if ($this->assetManager->resolvesToAsset($request)) {
-            return $this->assetManager->setAssetOnResponse($response);
+            return $this->assetManager->setAssetOnResponse(new Response());
         }
 
-        if (!$next) {
-            return $response;
-        }
-
-        return $next($request, $response);
+        return $delegate->process($request);
     }
 }
