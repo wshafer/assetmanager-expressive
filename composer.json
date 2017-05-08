@@ -1,0 +1,60 @@
+{
+    "name": "wshafer/assetmanager-expressive",
+    "description": "An assetmanager module for Zend Expressive.",
+    "license": "BSD-2-Clause",
+    "type": "library",
+    "keywords": [
+        "asset",
+        "asset manager",
+        "expressive"
+    ],
+    "homepage": "https://github.com/wshafer/assetmanager-expressive",
+    "authors": [
+        {
+            "name": "Wesley Overdijk",
+            "email": "r.w.overdijk@gmail.com",
+            "homepage": "http://blog.spoonx.nl/"
+        },
+        {
+            "name": "Marco Pivetta",
+            "email": "ocramius@gmail.com",
+            "homepage": "http://ocramius.github.com/"
+        },
+        {
+            "name": "Westin Shafera",
+            "email": "shafer_w2002@yahoo.com",
+            "homepage": "https://github.com/wshafer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "git@github.com:wshafer/assetmanager-core.git"
+        }
+    ],
+    "require": {
+        "php": "^5.6 || ^7.0",
+        "zendframework/zend-component-installer": "^1.0 || ^0.7.0",
+        "zendframework/zend-expressive": "^2.0.2",
+        "rwoverdijk/assetmanager-core": "^0.0.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7",
+        "squizlabs/php_codesniffer": "~3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AssetManager\\Expressive\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AssetManager\\Expressive\\Test\\": "tests/"
+        }
+    },
+    "extra": {
+        "zf": {
+            "config-provider": "AssetManager\\Expressive\\Module"
+        }
+    }
+}
