@@ -26,12 +26,6 @@
             "homepage": "https://github.com/wshafer"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url":  "git@github.com:wshafer/assetmanager-core.git"
-        }
-    ],
     "require": {
         "php": "^5.6 || ^7.0",
         "zendframework/zend-component-installer": "^1.0 || ^0.7.0",
