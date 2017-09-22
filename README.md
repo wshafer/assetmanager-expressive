@@ -16,12 +16,19 @@ with your module working *out of the box*.
 
 ## Installation
 
- 1.  Require assetmanager:
-
-```sh
-composer require wshafer/assetmanager-expressive
-```
-
+ 1.  Require assetmanager:  
+    ```
+    composer require wshafer/assetmanager-expressive
+    ```
+    
+ 2. Register the middleware.  The trick here is to make sure this is the last middleware to run before 
+    returning any kind of "not found" responses.   In a default pipeline, this would be placed just 
+    above the "NotFoundHandler" in `pipeline.php`
+    
+    ```
+    $app->pipe(\AssetManager\Expressive\MiddleWare\AssetManagerMiddleware::class);
+    ```
+    
 ## Usage
 
 Take a look at the **[wiki](https://github.com/wshafer/assetmanager-core/wiki)** for a quick start and more information.
@@ -55,11 +62,6 @@ return array(
                     'filter' => 'JSMin',
                 ),
             ),
-        ),
-        'view_helper' => array(
-            'cache'            => 'Application\Cache\Redis', // You will need to require the factory used for the cache yourself.
-            'append_timestamp' => true,                      // optional, if false never append a query param
-            'query_string'     => '_',                       // optional
         ),
         'caching' => array(
             'js/d.js' => array(
