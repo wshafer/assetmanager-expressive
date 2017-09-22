@@ -5,7 +5,6 @@ namespace AssetManager\Expressive\MiddleWare;
 use AssetManager\Core\Service\AssetManager;
 use Interop\Http\ServerMiddleware\DelegateInterface;
 use Interop\Http\ServerMiddleware\MiddlewareInterface;
-use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response;
 

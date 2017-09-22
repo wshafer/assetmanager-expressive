@@ -1,3 +1,7 @@
+[![codecov](https://codecov.io/gh/wshafer/assetmanager-expressive/branch/master/graph/badge.svg)](https://codecov.io/gh/wshafer/assetmanager-expressive)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/wshafer/assetmanager-expressive/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/wshafer/assetmanager-expressive/?branch=master)
+[![Build Status](https://travis-ci.org/wshafer/assetmanager-expressive.svg?branch=master)](https://travis-ci.org/wshafer/assetmanager-expressive)
+
 # AssetManager For Zend Expressive
 Fork of the original [ZF2 Assetmanager](https://github.com/RWOverdijk/AssetManager) 
 By [Wesley Overdijk](http://blog.spoonx.nl/) and [Marco Pivetta](http://ocramius.github.com/)
